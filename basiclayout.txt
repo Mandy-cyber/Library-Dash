@@ -1,0 +1,40 @@
+import pygame
+pygame.init()
+
+#Setting Up Window
+WIDTH, HEIGHT = 480, 480
+WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
+
+#Miscellaneous Stuff
+FPS = 120
+VELOCITY = 5
+
+#Loading images
+
+#Put stuff on screen
+def draw_window():
+  WINDOW.blit()
+  pygame.display.update()
+
+#Main loop
+def main():
+  run = True
+  clock = pygame.time.Clock()
+  while run:
+    clock.tick(FPS)
+    for event in pygame.event.get(): 
+      if event.type == pygame.QUIT: #close game if they exit
+        run = False 
+        pygame.quit()
+
+
+    
+    keys_pressed = pygame.key.get_pressed()
+
+    draw_window()
+
+  main()
+
+
+if __name__ == "__main__":
+  main()
